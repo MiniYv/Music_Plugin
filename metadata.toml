@@ -1,0 +1,29 @@
+[plugin]
+name        = "小禹听歌插件"
+version     = "1.1.0"
+author      = "MiniYv"
+description = "QQ音乐搜索与点歌，支持歌名搜索、选择歌曲、查看详情与播放链接，结果以精美图片展示"
+priority    = 50
+icon        = "https://pic1.zhimg.com/v2-cb1ef54a9ddce31cce8a25e15d5cf6de_r.jpg"
+dependencies = []
+category    = "娱乐"
+tags        = ["娱乐", "点歌", "QQ"]
+repo        = "MiniYv/Music_Plugin"
+docs_url    = "https://github.com/MiniYv/Music_Plugin"
+min_framework = "0.1.0"
+
+[handler]
+entry       = "handle_music"
+
+[trigger]
+commands       = ["/点歌", "/qq音乐", "/选择", "/歌曲详情", "/清理缓存"]
+chat_type      = ["private", "group"]
+permission     = "all"
+is_at_required = false
+
+[trigger.command_descriptions]
+"/点歌"      = "搜索QQ音乐歌曲（例：/点歌 周深）"
+"/qq音乐"    = "同/点歌，搜索QQ音乐"
+"/选择"      = "从上一次搜索结果中选择歌曲（例：/选择 1）"
+"/歌曲详情"  = "查看上一首选中歌曲的详情"
+"/清理缓存"  = "清理超过指定天数的缓存文件（默认7天）"
